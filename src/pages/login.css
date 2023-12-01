@@ -1,0 +1,45 @@
+.background {
+  background-image: url("/public/img/solar-panel-close-up 1.png");
+  /* background-size: cover;
+  background-repeat: no-repeat;
+  width: auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* background-size: 1440px 1024px; */
+  /* background-position: -747px -1802px; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* .circle {
+  background-image: url("/public/img/vectorCircle-removebg-preview.png");
+  background-repeat: no-repeat;
+  background-position: 10px;
+  width: auto;
+  height: auto;
+} */
+
+/* @media only screen and (max-width: 600px) {
+  .circle2 {
+    background-position: no;
+    width: 50px;
+  }
+} */
+
+@media only screen and (min-width: 992px) {
+  .circle {
+    background-image: url("/public/img/vectorCircle-removebg-preview.png");
+    background-repeat: no-repeat;
+    background-position: 10px;
+    width: auto;
+    height: auto;
+  }
+}
+
+/* .text1 {
+  position: relative;
+  right: 50px;
+} */
