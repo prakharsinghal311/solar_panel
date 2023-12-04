@@ -33,7 +33,7 @@
   .circle {
     background-image: url("/public/img/vectorCircle-removebg-preview.png");
     background-repeat: no-repeat;
-    background-position: 10px;
+    background-position: -66px;
     width: auto;
     height: auto;
   }
@@ -42,4 +42,34 @@
 /* .text1 {
   position: relative;
   right: 50px;
+} */
+
+/* @media (min-width: 640px) {
+  .upper_part {
+    margin: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .upper_part {
+    margin-left: 14rem;
+    margin-right: 14rem;
+    margin-bottom: 2.5rem;
+    margin-top: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .upper_part {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+}
+
+.upper_part {
+  display: grid;
+  padding: 1.25rem;
+  margin: 0.75rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  border-radius: 1.5rem;
+  border-width: 4px;
 } */

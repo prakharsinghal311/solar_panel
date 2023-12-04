@@ -5,6 +5,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import logo2 from "../assets/Frame 1171275426.png";
 import logo3 from "../assets/logo 2.png";
 import piechartlogo3 from "../assets/ChartPieSlice-d (2).png";
+import dashboardpart1img from "../assets/ChartPieSlice-d.png";
+import dashboardpart2img from "../assets/ChartPieSlice-d (1).png";
 import dashboardimg from "../assets/ChartPieSlice-d (3).png";
 import notificationlogo from "../assets/Notifications-On.jpg";
 import fullimage from "../assets/WhatsApp Image 2023-10-21 at 11.05.jpg";
@@ -22,6 +24,7 @@ import dashboard2 from "../assets/ChartPieSlice-d.png";
 import dashboard1img from "../assets/Frame 427319080.png";
 import dashboard2img from "../assets/Frame 427319081.png";
 import dashboardopenimg from "../assets/Vector (8).png";
+import "chartjs-plugin-datalabels";
 import {
   Chart as ChartJS,
   ArcElement,
@@ -34,7 +37,7 @@ import {
   Title,
   BarElement,
 } from "chart.js";
-import { Doughnut, Line, Bar } from "react-chartjs-2";
+import { Doughnut, Line, Bar, Pie } from "react-chartjs-2";
 
 ChartJS.register(
   ArcElement,
@@ -92,6 +95,65 @@ export const options2 = {
 };
 
 export const options3 = {
+  responsive: true,
+  plugins: {
+    legend: {
+      display: false,
+    },
+    datalabels: {
+      display: false,
+    },
+  },
+  maintainAspectRatio: false,
+  responsive: true,
+};
+
+export const options4 = {
+  plugins: {
+    legend: {
+      // position: "right",
+      labels: {
+        usePointStyle: true,
+        boxHeight: 10,
+      },
+    },
+    datalabels: {
+      color: "white",
+      // formatter: (value, context) => {
+      //   return (
+      //     context.chart.data.labels[context.dataIndex] + ": " + value + "%"
+      //   );
+      // },
+      // anchor: "end",
+      // align: "start",
+      // offset: 10,
+      // anchor: "end", // Set anchor to 'end' for placing labels outside the chart
+      // align: "end", // Set align to 'end' for placing labels outside the chart
+      // offset: 10,
+    },
+    // title: {
+    //   display: true,
+    //   text: "Capacity [KWp]",
+    //   font: {
+    //     size: 14,
+    //   },
+    //   colors: {
+    //     color: "black",
+    //   },
+    // },
+  },
+  // clip: { left: 50, top: false, right: -2, bottom: 0 },
+  // width: 100, // Set the width of the chart
+  // height: 100,
+  // slices: { 1: { offset: 10 } },
+  // pieSliceText: "label",
+  // slices: { 1: { offset: 10 } },
+  cutoutPercentage: 30,
+  maintainAspectRatio: false,
+  responsive: true,
+};
+
+export const options5 = {
   responsive: true,
   plugins: {
     legend: {
@@ -174,63 +236,166 @@ export const data3 = {
     {
       label: "Bar 1",
       data: [1950],
-      backgroundColor: "rgba(0, 51, 153, 1)",
+      backgroundColor: "rgba(53, 110, 53, 1)",
       borderWidth: 1,
     },
     {
       label: "Bar 1",
       data: [1700],
-      backgroundColor: "rgba(0, 51, 153, 1)",
+      backgroundColor: "rgba(53, 110, 53, 1)",
       borderWidth: 1,
     },
     {
       label: "Bar 1",
       data: [1050],
-      backgroundColor: "rgba(0, 51, 153, 1)",
+      backgroundColor: "rgba(53, 110, 53, 1)",
       borderWidth: 1,
     },
     {
       label: "Bar 1",
       data: [1800],
-      backgroundColor: "rgba(0, 51, 153, 1)",
+      backgroundColor: "rgba(53, 110, 53, 1)",
       borderWidth: 1,
     },
     {
       label: "Bar 1",
       data: [1400],
-      backgroundColor: "rgba(0, 51, 153, 1)",
+      backgroundColor: "rgba(53, 110, 53, 1)",
       borderWidth: 1,
     },
     {
       label: "Bar 1",
       data: [1050],
-      backgroundColor: "rgba(0, 51, 153, 1)",
+      backgroundColor: "rgba(53, 110, 53, 1)",
       borderWidth: 1,
     },
     {
       label: "Bar 1",
       data: [1800],
-      backgroundColor: "rgba(0, 51, 153, 1)",
+      backgroundColor: "rgba(53, 110, 53, 1)",
       borderWidth: 1,
     },
     {
       label: "Bar 1",
       data: [1700],
-      backgroundColor: "rgba(0, 51, 153, 1)",
+      backgroundColor: "rgba(53, 110, 53, 1)",
       borderWidth: 1,
     },
     {
       label: "Bar 1",
       data: [1950],
-      backgroundColor: "rgba(0, 51, 153, 1)",
+      backgroundColor: "rgba(53, 110, 53, 1)",
       borderWidth: 1,
     },
     {
       label: "Bar 1",
       data: [1800],
-      backgroundColor: "rgba(0, 51, 153, 1)",
+      backgroundColor: "rgba(53, 110, 53, 1)",
       borderWidth: 1,
     },
+  ],
+};
+
+export const data4 = {
+  labels: ["INV-1", "INV-2", "INV-3", "INV-4", "INV-5"],
+  datasets: [
+    {
+      label: "# of Votes",
+      data: [237, 727, 490],
+      backgroundColor: [
+        "rgba(227, 87, 58, 1)",
+        "rgba(93, 41, 118, 1)",
+        "rgba(35, 125, 41, 1)",
+        // "rgba(75, 192, 192, 0.2)",
+      ],
+      offset: [25, 0, 0],
+      // borderColor: [
+      //   "rgba(255, 99, 132, 1)",
+      //   "rgba(54, 162, 235, 1)",
+      //   "rgba(255, 206, 86, 1)",
+      //   "rgba(75, 192, 192, 1)",
+      //   "rgba(153, 102, 255, 1)",
+      //   "rgba(255, 159, 64, 1)",
+      // ],
+      // borderWidth: 1,
+    },
+  ],
+};
+
+export const data5 = {
+  labels: [
+    // "13 Oct 2023                           17 Oct 2023                          21 Oct 2023",
+    "13 Oct 2023",
+    "17 Oct 2023",
+    "17 Oct 2023",
+    "17 Oct 2023",
+    "17 Oct 2023",
+    "17 Oct 2023",
+    "17 Oct 2023",
+    "17 Oct 2023",
+    "21 Oct 2023",
+  ],
+  datasets: [
+    {
+      label: "Dataset 1",
+      data: [1200, 1800, 1250, 1950, 1800, 1800, 1800, 1800, 1800],
+      backgroundColor: "rgba(53, 110, 53, 1)",
+      borderWidth: 1,
+    },
+    {
+      label: "Dataset 2",
+      data: [1700, 1950, 1800, 1400, 1900, 1900, 1900, 1900, 1900],
+      backgroundColor: "rgba(91, 136, 117, 1)",
+      borderWidth: 1,
+    },
+    // {
+    //   label: "Bar 1",
+    //   data: [1050],
+    //   backgroundColor: "rgba(53, 110, 53, 1)",
+    //   borderWidth: 1,
+    // },
+    // {
+    //   label: "Bar 1",
+    //   data: [1800],
+    //   backgroundColor: "rgba(53, 110, 53, 1)",
+    //   borderWidth: 1,
+    // },
+    // {
+    //   label: "Bar 1",
+    //   data: [1400],
+    //   backgroundColor: "rgba(53, 110, 53, 1)",
+    //   borderWidth: 1,
+    // },
+    // {
+    //   label: "Bar 1",
+    //   data: [1050],
+    //   backgroundColor: "rgba(53, 110, 53, 1)",
+    //   borderWidth: 1,
+    // },
+    // {
+    //   label: "Bar 1",
+    //   data: [1800],
+    //   backgroundColor: "rgba(53, 110, 53, 1)",
+    //   borderWidth: 1,
+    // },
+    // {
+    //   label: "Bar 1",
+    //   data: [1700],
+    //   backgroundColor: "rgba(53, 110, 53, 1)",
+    //   borderWidth: 1,
+    // },
+    // {
+    //   label: "Bar 1",
+    //   data: [1950],
+    //   backgroundColor: "rgba(53, 110, 53, 1)",
+    //   borderWidth: 1,
+    // },
+    // {
+    //   label: "Bar 1",
+    //   data: [1800],
+    //   backgroundColor: "rgba(53, 110, 53, 1)",
+    //   borderWidth: 1,
+    // },
   ],
 };
 
@@ -238,6 +403,8 @@ export const Dashboard = () => {
   const [mobileView, setMobileView] = useState(false);
   const [dropDown, setDropDown] = useState(false);
   const [dashboardOpen, setDashboardOpen] = useState(false);
+  const [tab1, setTab1] = useState(true);
+  const [tab2, setTab2] = useState(false);
 
   const dropDownHandler = () => {
     setDropDown((status) => !status);
@@ -249,6 +416,16 @@ export const Dashboard = () => {
 
   const dashboardHandler = () => {
     setDashboardOpen((status) => !status);
+  };
+
+  const tab1handler = () => {
+    setTab1((status) => true);
+    setTab2((status) => false);
+  };
+
+  const tab2handler = () => {
+    setTab2((status) => true);
+    setTab1((status) => false);
   };
 
   return (
@@ -400,7 +577,7 @@ export const Dashboard = () => {
           >
             {/* <img className="ml-6 w-28" src={logo2} alt="" /> */}
             <img
-              style={{ marginLeft: "1.5rem", width: "7rem" }}
+              style={{ marginLeft: "3.4rem", width: "7rem" }}
               src={logo2}
               alt=""
             />
@@ -414,7 +591,7 @@ export const Dashboard = () => {
             <button className="dashboard" onClick={dashboardHandler}>
               {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
-                style={{ marginRight: "0.5rem", marginLeft: "0.1rem" }}
+                style={{ marginRight: "0.5rem", marginLeft: "0.8rem" }}
                 src={dashboardimg}
                 alt=""
               />
@@ -431,16 +608,32 @@ export const Dashboard = () => {
                 Dashboard 2
               </button>
             </div> */}
-            <img
+            {/* <img
               src={dashboard1img}
               className={`dashboardpartsimg  ${dashboardOpen ? "active" : ""}`}
               alt=""
-            />
-            <img
-              src={dashboard2img}
+            /> */}
+            <div
               className={`dashboardpartsimg  ${dashboardOpen ? "active" : ""}`}
-              alt=""
-            />
+            >
+              <img
+                src={dashboardpart1img}
+                className="dashboardpartimg"
+                alt=""
+              />
+              Dashboard
+            </div>
+
+            <div
+              className={`dashboardpartsimg  ${dashboardOpen ? "active" : ""}`}
+            >
+              <img
+                src={dashboardpart2img}
+                className="dashboardpartimg"
+                alt=""
+              />
+              Dashboard
+            </div>
 
             {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
             <button className="analysis">
@@ -683,12 +876,29 @@ export const Dashboard = () => {
                     style={{
                       paddingLeft: "0.5rem",
                       paddingRight: "0.5rem",
-                      backgroundColor: "#ffffff",
+                      backgroundColor: tab1
+                        ? "rgba(238, 238, 238, 1)"
+                        : "rgba(255, 255, 255, 0)",
+                      borderWidth: tab1 ? "1px 1px 0px 1px" : "0",
+                      borderStyle: "solid",
                     }}
+                    onClick={tab1handler}
                   >
                     Tab 1
                   </button>
-                  <button className="tab2">Tab 2</button>
+                  <button
+                    className="tab2button"
+                    style={{
+                      backgroundColor: tab2
+                        ? "rgba(238, 238, 238, 1)"
+                        : "rgba(255, 255, 255, 0)",
+                      borderWidth: tab2 ? "1px 1px 0px 1px" : "0",
+                      borderStyle: "solid",
+                    }}
+                    onClick={tab2handler}
+                  >
+                    Tab 2
+                  </button>
                   <button className="tab3">Tab 3</button>
                 </div>
               </div>
@@ -713,7 +923,7 @@ export const Dashboard = () => {
                 <div className="humidity">Humidity : 36%</div>
               </div>
 
-              <div className="charts">
+              <div className={`charts ${tab1 ? "active" : ""}`}>
                 <img className="chart1" src={icons} alt="" />
 
                 <div className="capacities">
@@ -786,33 +996,7 @@ export const Dashboard = () => {
                     </div>
                   </div>
                 </div>
-                {/* <div className="chart2">
-                  <div className="chart2title">
-                    <div>Inverter Wise Capacity [KWp]</div>
-                    <img
-                      className="ml-1 sm:ml-28 h-4 mt-1"
-                      src={calender}
-                      alt=""
-                    />
-                    <div className="ml-1 sm:ml-3 rounded-md p-1 px-3 bg-white shadow-inner">
-                      January
-                    </div>
-                    <div className="m-1">to</div>
-                    <div className="ml-1 sm:ml-3 rounded-md p-1 px-3 bg-white shadow-inner">
-                      August
-                    </div>
-                    <img className="ml-2 mt-1 h-4" src={reverselogo} alt="" />
-                    <img className="ml-1 sm:ml-52 h-5" src={expand} alt="" />
-                    <img className="h-5" src={settinglogo} alt="" />
-                  </div>
-                  
-                  <div className="linechart">
-                    <Line className="ChartBox" options={options} data={data} />
-                  </div>
-                </div> */}
-                {/* <div className="h-48 border border-1 border-gray-200 shadow-md rounded-md overflow-hidden m-1 bg-white"> */}
-                {/* <div className="text-xs border border-1 border-gray-200  font-semibold shadow-md rounded-xl overflow-hidden px-1 m-1 bg-white flex flex-row"> */}
-                {/* <div className="h-48 border border-1 border-gray-200 shadow-md rounded-md m-1 sm:p-2 bg-white"> */}
+
                 <div className="">
                   <div className="chart3title">
                     <div>Inverter Wise Capacity [KWp]</div>
@@ -828,9 +1012,8 @@ export const Dashboard = () => {
                     <Doughnut options={options2} data={data2} />
                   </div>
                 </div>
-                {/* <div className="sm:col-span-3 font-semibold"> */}
+
                 <div className="chart4">
-                  {/* <div className="text-xs sm:col-span-3 border border-1 border-gray-200 shadow-md rounded-md overflow-hidden px-4 m-1 bg-white flex flex-row"> */}
                   <div className="chart4title">
                     <div>Inverter Wise Capacity [KWp]</div>
                     <img
@@ -849,9 +1032,65 @@ export const Dashboard = () => {
                     <img className="ml-1 sm:ml-40 h-5" src={expand} alt="" />
                     <img className="h-5" src={settinglogo} alt="" />
                   </div>
-                  {/* <div className="h-48 border border-1 border-gray-200 shadow-md rounded-md overflow-hidden m-1 bg-white"> */}
+
                   <div className="barchart">
                     <Bar options={options3} data={data3} />
+                  </div>
+                </div>
+              </div>
+              <div className={`tab2 ${tab2 ? "active" : ""}`}>
+                <div className="tab2_first_part">
+                  <div>
+                    <div className="chart3title">
+                      <div>Total Instant Power [KW]</div>
+                      <img
+                        className="ml-32 sm:ml-28 h-4 mt-px"
+                        src={reverselogo}
+                        alt=""
+                      />
+                      <img className="h-5" src={settinglogo} alt="" />
+                    </div>
+                    <div className="h-48 rounded-lg border-2">
+                      <Pie options={options4} data={data4} />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="chart4title">
+                      <div>Inverter Wise Capacity [KWp]</div>
+                      <img
+                        className=" ml-0.5 sm:ml-10 h-4 mt-1"
+                        src={calender}
+                        alt=""
+                      />
+                      <div className="ml-px sm:ml-3 sm:rounded-md p-1 bg-white shadow-inner">
+                        12/Oct/2023
+                      </div>
+                      <div className="m-0.5 sm:m-1">to</div>
+                      <div className="ml-0.5 sm:ml-3 rounded-md p-1 px-3 bg-white shadow-inner">
+                        21/Oct/2023
+                      </div>
+                      <img className="ml-2 mt-1 h-4" src={reverselogo} alt="" />
+                      <img className="ml-1 sm:ml-40 h-5" src={expand} alt="" />
+                      <img className="h-5" src={settinglogo} alt="" />
+                    </div>
+                    <div className="barchart">
+                      <Bar options={options3} data={data3} />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div className="chart3title">
+                    <div>Peak KW vs KWp</div>
+                    <img
+                      className="ml-36 sm:ml-[830px] h-4 mt-px"
+                      src={reverselogo}
+                      alt=""
+                    />
+                    <img className="ml-1 sm:ml-2 h-5" src={expand} alt="" />
+                    <img className="h-5" src={settinglogo} alt="" />
+                  </div>
+                  <div className="barchart">
+                    <Bar options={options5} data={data5} />
                   </div>
                 </div>
               </div>
