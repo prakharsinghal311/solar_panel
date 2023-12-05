@@ -14,15 +14,12 @@ import calender from "../assets/Calender-Date.png";
 import cloud from "../assets/Cloud.png";
 import thermometer from "../assets/Themomether.png";
 import droplet from "../assets/Droplet.png";
-import icons from "../assets/Frame 1171275365.jpg";
+import icons from "../assets/Frame 1171275365.png";
 import reverselogo from "../assets/reverselogo.jpg";
 import expand from "../assets/Expand.jpg";
 import settinglogo from "../assets/settinglogo.jpg";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import piechartblack from "../assets/ChartPieSlice-d__1_-removebg-preview.png";
-import dashboard2 from "../assets/ChartPieSlice-d.png";
-import dashboard1img from "../assets/Frame 427319080.png";
-import dashboard2img from "../assets/Frame 427319081.png";
 import dashboardopenimg from "../assets/Vector (8).png";
 import "chartjs-plugin-datalabels";
 import {
@@ -111,7 +108,6 @@ export const options3 = {
 export const options4 = {
   plugins: {
     legend: {
-      // position: "right",
       labels: {
         usePointStyle: true,
         boxHeight: 10,
@@ -119,35 +115,8 @@ export const options4 = {
     },
     datalabels: {
       color: "white",
-      // formatter: (value, context) => {
-      //   return (
-      //     context.chart.data.labels[context.dataIndex] + ": " + value + "%"
-      //   );
-      // },
-      // anchor: "end",
-      // align: "start",
-      // offset: 10,
-      // anchor: "end", // Set anchor to 'end' for placing labels outside the chart
-      // align: "end", // Set align to 'end' for placing labels outside the chart
-      // offset: 10,
     },
-    // title: {
-    //   display: true,
-    //   text: "Capacity [KWp]",
-    //   font: {
-    //     size: 14,
-    //   },
-    //   colors: {
-    //     color: "black",
-    //   },
-    // },
   },
-  // clip: { left: 50, top: false, right: -2, bottom: 0 },
-  // width: 100, // Set the width of the chart
-  // height: 100,
-  // slices: { 1: { offset: 10 } },
-  // pieSliceText: "label",
-  // slices: { 1: { offset: 10 } },
   cutoutPercentage: 30,
   maintainAspectRatio: false,
   responsive: true,
@@ -306,18 +275,8 @@ export const data4 = {
         "rgba(227, 87, 58, 1)",
         "rgba(93, 41, 118, 1)",
         "rgba(35, 125, 41, 1)",
-        // "rgba(75, 192, 192, 0.2)",
       ],
       offset: [25, 0, 0],
-      // borderColor: [
-      //   "rgba(255, 99, 132, 1)",
-      //   "rgba(54, 162, 235, 1)",
-      //   "rgba(255, 206, 86, 1)",
-      //   "rgba(75, 192, 192, 1)",
-      //   "rgba(153, 102, 255, 1)",
-      //   "rgba(255, 159, 64, 1)",
-      // ],
-      // borderWidth: 1,
     },
   ],
 };
@@ -348,54 +307,6 @@ export const data5 = {
       backgroundColor: "rgba(91, 136, 117, 1)",
       borderWidth: 1,
     },
-    // {
-    //   label: "Bar 1",
-    //   data: [1050],
-    //   backgroundColor: "rgba(53, 110, 53, 1)",
-    //   borderWidth: 1,
-    // },
-    // {
-    //   label: "Bar 1",
-    //   data: [1800],
-    //   backgroundColor: "rgba(53, 110, 53, 1)",
-    //   borderWidth: 1,
-    // },
-    // {
-    //   label: "Bar 1",
-    //   data: [1400],
-    //   backgroundColor: "rgba(53, 110, 53, 1)",
-    //   borderWidth: 1,
-    // },
-    // {
-    //   label: "Bar 1",
-    //   data: [1050],
-    //   backgroundColor: "rgba(53, 110, 53, 1)",
-    //   borderWidth: 1,
-    // },
-    // {
-    //   label: "Bar 1",
-    //   data: [1800],
-    //   backgroundColor: "rgba(53, 110, 53, 1)",
-    //   borderWidth: 1,
-    // },
-    // {
-    //   label: "Bar 1",
-    //   data: [1700],
-    //   backgroundColor: "rgba(53, 110, 53, 1)",
-    //   borderWidth: 1,
-    // },
-    // {
-    //   label: "Bar 1",
-    //   data: [1950],
-    //   backgroundColor: "rgba(53, 110, 53, 1)",
-    //   borderWidth: 1,
-    // },
-    // {
-    //   label: "Bar 1",
-    //   data: [1800],
-    //   backgroundColor: "rgba(53, 110, 53, 1)",
-    //   borderWidth: 1,
-    // },
   ],
 };
 
@@ -430,7 +341,6 @@ export const Dashboard = () => {
 
   return (
     <div>
-      {/* <div className="sm:grid sm:grid-cols-5"> */}
       <div className="contain">
         <div className={`sidebar ${mobileView === true ? "active" : ""}`}>
           <div
@@ -438,39 +348,44 @@ export const Dashboard = () => {
               overflow: "hidden",
               padding: "1.25rem",
               height: "100%",
-              // background: "#F7F7F7",
               background: "#356E35",
             }}
           >
-            {/* <div className="sidebar"> */}
-            {/* <img className="ml-6 w-28" src={logo2} alt="" /> */}
             <img className="logo1" src={logo2} alt="" />
             <div style={{ fontSize: "1rem", lineHeight: "2rem" }}>
               eSolar Plant Monitoring System
             </div>
             <button className="dashboard" onClick={dashboardHandler}>
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
-                style={{ marginRight: "0.5rem", marginLeft: "0.1rem" }}
+                style={{ marginRight: "0.5rem", marginLeft: "1rem" }}
                 src={dashboardimg}
                 alt=""
               />
               Dashboard
               <img src={dashboardopenimg} className="dashboardopenimg" alt="" />
             </button>
-            <img
-              src={dashboard1img}
+            <div
               className={`dashboardpartsimg  ${dashboardOpen ? "active" : ""}`}
-              alt=""
-            />
-            <img
-              src={dashboard2img}
-              className={`dashboardpartsimg  ${dashboardOpen ? "active" : ""}`}
-              alt=""
-            />
-            {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
+            >
+              <img
+                src={dashboardpart1img}
+                className="dashboardpartimg"
+                alt=""
+              />
+              Dashboard
+            </div>
+
+            <div
+              className={`dashboardparts2img  ${dashboardOpen ? "active" : ""}`}
+            >
+              <img
+                src={dashboardpart2img}
+                className="dashboardpartimg"
+                alt=""
+              />
+              Dashboard
+            </div>
             <button className="analysis">
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem" }}
                 src={piechartlogo3}
@@ -478,9 +393,7 @@ export const Dashboard = () => {
               />
               Analysis
             </button>
-            {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
             <button className="analysis">
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem" }}
                 src={piechartlogo3}
@@ -488,9 +401,7 @@ export const Dashboard = () => {
               />
               PV Monitoring
             </button>
-            {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
             <button className="analysis">
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem" }}
                 src={piechartlogo3}
@@ -498,9 +409,7 @@ export const Dashboard = () => {
               />
               WMS
             </button>
-            {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
             <button className="analysis">
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem" }}
                 src={piechartlogo3}
@@ -508,9 +417,7 @@ export const Dashboard = () => {
               />
               Energy Reporting
             </button>
-            {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
             <button className="analysis">
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem" }}
                 src={piechartlogo3}
@@ -518,9 +425,7 @@ export const Dashboard = () => {
               />
               Event Log Reports
             </button>
-            {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
             <button className="analysis">
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem" }}
                 src={piechartlogo3}
@@ -528,9 +433,7 @@ export const Dashboard = () => {
               />
               Plant Total Power Curve
             </button>
-            {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
             <button className="analysis">
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem" }}
                 src={piechartlogo3}
@@ -538,9 +441,7 @@ export const Dashboard = () => {
               />
               Outage
             </button>
-            {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
             <button className="analysis">
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem" }}
                 src={piechartlogo3}
@@ -548,9 +449,7 @@ export const Dashboard = () => {
               />
               User Details
             </button>
-            {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
             <button className="analysis">
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem" }}
                 src={piechartlogo3}
@@ -565,31 +464,25 @@ export const Dashboard = () => {
           onClick={menuHandler}
         />
         <div className="dashboardSidebar">
-          {/* <div style={`p-5 bg-[#F7F7F7] h-full overflow-hidden `}> */}
           <div
             style={{
               overflow: "hidden",
               padding: "1.25rem",
               height: "100%",
-              // background: "#F7F7F7",
               background: "#356E35",
             }}
           >
-            {/* <img className="ml-6 w-28" src={logo2} alt="" /> */}
             <img
               style={{ marginLeft: "3.4rem", width: "7rem" }}
               src={logo2}
               alt=""
             />
-            {/* <div className="text-xs">eSolar Plant Monitoring System</div> */}
             <div
               style={{ fontSize: "1rem", lineHeight: "2rem", color: "white" }}
             >
               eSolar Plant Monitoring System
             </div>
-            {/* <button className="text-xs flex flex-row bg-[#003399] text-white w-full rounded-md mt-8 px-3 py-px"> */}
             <button className="dashboard" onClick={dashboardHandler}>
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem", marginLeft: "0.8rem" }}
                 src={dashboardimg}
@@ -598,21 +491,6 @@ export const Dashboard = () => {
               Dashboard
               <img src={dashboardopenimg} className="dashboardopenimg" alt="" />
             </button>
-            {/* <div className="dashboard_parts">
-              <button className="dashboard_single">
-                <img src={dashboard1} className="dashboard_part_img" alt="" />
-                Dashboard 1
-              </button>
-              <button className="dashboard_single">
-                <img src={dashboard2} className="dashboard_part_img" alt="" />
-                Dashboard 2
-              </button>
-            </div> */}
-            {/* <img
-              src={dashboard1img}
-              className={`dashboardpartsimg  ${dashboardOpen ? "active" : ""}`}
-              alt=""
-            /> */}
             <div
               className={`dashboardpartsimg  ${dashboardOpen ? "active" : ""}`}
             >
@@ -625,7 +503,7 @@ export const Dashboard = () => {
             </div>
 
             <div
-              className={`dashboardpartsimg  ${dashboardOpen ? "active" : ""}`}
+              className={`dashboardparts2img  ${dashboardOpen ? "active" : ""}`}
             >
               <img
                 src={dashboardpart2img}
@@ -635,9 +513,7 @@ export const Dashboard = () => {
               Dashboard
             </div>
 
-            {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
             <button className="analysis">
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem" }}
                 src={piechartlogo3}
@@ -645,9 +521,7 @@ export const Dashboard = () => {
               />
               Analysis
             </button>
-            {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
             <button className="analysis">
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem" }}
                 src={piechartlogo3}
@@ -655,9 +529,7 @@ export const Dashboard = () => {
               />
               PV Monitoring
             </button>
-            {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
             <button className="analysis">
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem" }}
                 src={piechartlogo3}
@@ -665,9 +537,7 @@ export const Dashboard = () => {
               />
               WMS
             </button>
-            {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
             <button className="analysis">
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem" }}
                 src={piechartlogo3}
@@ -675,9 +545,7 @@ export const Dashboard = () => {
               />
               Energy Reporting
             </button>
-            {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
             <button className="analysis">
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem" }}
                 src={piechartlogo3}
@@ -685,9 +553,7 @@ export const Dashboard = () => {
               />
               Event Log Reports
             </button>
-            {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
             <button className="analysis">
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem" }}
                 src={piechartlogo3}
@@ -695,9 +561,7 @@ export const Dashboard = () => {
               />
               Plant Total Power Curve
             </button>
-            {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
             <button className="analysis">
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem" }}
                 src={piechartlogo3}
@@ -705,9 +569,7 @@ export const Dashboard = () => {
               />
               Outage
             </button>
-            {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
             <button className="analysis">
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem" }}
                 src={piechartlogo3}
@@ -715,9 +577,7 @@ export const Dashboard = () => {
               />
               User Details
             </button>
-            {/* <button className="text-xs flex flex-row text-black w-full rounded-md mt-2 px-3"> */}
             <button className="analysis">
-              {/* <img className="mr-2" src={piechartlogo3} alt="" /> */}
               <img
                 style={{ marginRight: "0.5rem" }}
                 src={piechartlogo3}
@@ -728,9 +588,7 @@ export const Dashboard = () => {
           </div>
         </div>
 
-        {/* <div className="sm:col-span-4"> */}
         <div className="chartandnews">
-          {/* <div className="sm:grid sm:grid-rows-8"> */}
           <div
             style={{
               "@media (min-width: 640px)": {
@@ -739,14 +597,12 @@ export const Dashboard = () => {
               },
             }}
           >
-            {/* <div className="sm:row-span-2 bg-[#F7F7F7]"> */}
             <div
               style={{
                 background: "#F7F7F7",
                 "@media (min-width: 640px)": { gridRow: "span 2 / span 2" },
               }}
             >
-              {/* <div className="border border-1 border-b-gray-500 py-1 px-2 font-semibold"> */}
               <div
                 style={{
                   paddingTop: "0.25rem",
@@ -757,12 +613,10 @@ export const Dashboard = () => {
                   fontWeight: 600,
                 }}
               >
-                {/* <div className="flex flex-row "> */}
                 <div style={{ display: "flex", flexDirection: "row" }}>
                   <div className="menuIcon">
                     <MenuIcon onClick={menuHandler} />
                   </div>
-                  {/* <img className="m-2 sm:m-1" src={piechartlogo3} alt="" /> */}
                   <img
                     style={{
                       margin: "0.5rem",
@@ -771,7 +625,6 @@ export const Dashboard = () => {
                     src={piechartblack}
                     alt=""
                   />
-                  {/* <div className="m-1 sm:ml-2 mr-1 md:mr-10 font-bold"> */}
                   <div
                     style={{
                       margin: "0.25rem",
@@ -783,27 +636,12 @@ export const Dashboard = () => {
                   >
                     Dashboard
                   </div>
-                  {/* <div className="max-[640px]:hidden ml-1 md:ml-96">
-                    Last log time : 21/10/2023{" "}
-                  </div> */}
-                  {/* <div
-                    style={{
-                      marginLeft: "100px",
-                      "@media (min-width: 768px)": { marginLeft: "100px" },
-                    }}
-                  > */}
                   <div className="lastLogTime">Last log time : 21/10/2023 </div>
-                  {/* <div className="max-[640px]:hidden ml-4"> 03:45 AM</div> */}
                   <div className="time1"> 03:45 AM</div>
-                  <div
-                    onClick={dropDownHandler}
-                    // className=" ml-28 sm:ml-3 border border-1 rounded-md p-1 px-3 bg-white shadow-inner"
-                    className="currentime1"
-                  >
+                  <div onClick={dropDownHandler} className="currentime1">
                     00:00:00
                   </div>
                   <img
-                    // className="h-5 mt-2 ml-5 md:ml-9"
                     style={{
                       marginTop: "0.5rem",
                       marginLeft: "1rem",
@@ -813,7 +651,6 @@ export const Dashboard = () => {
                     src={notificationlogo}
                     alt=""
                   />
-                  {/* <img className="h-7 ml-5 md:ml-9" src={logo2} alt="" /> */}
                   <img
                     style={{
                       height: "1.75rem",
@@ -826,22 +663,16 @@ export const Dashboard = () => {
                 </div>
 
                 <div className={`dropDown ${dropDown == true ? "active" : ""}`}>
-                  {/* <div className="border border-1 bg-white w-32 max-w-[128px] py-1 px-2 rounded-md">
-                    Last log time : 21/10/2023 03:45 AM
-                  </div> */}
                   <div className="lastlogtime2">
                     Last log time : 21/10/2023 03:45 AM
                   </div>
                 </div>
                 <div className="" />
               </div>
-              {/* <div className="flex flex-row border border-1 border-gray-200 shadow-md rounded overflow-hidden text-sm font-semibold px-1 py-1 m-1 bg-[#D4E2FF] font-['Inter']"> */}
               <div className="currentaffairs">
-                {/* <div className="mr-2 text-[#FF0000]">ms</div> */}
                 <div style={{ marginRight: "0.5rem", color: "#FF0000" }}>
                   ms
                 </div>
-                {/* <div className="text-[#003399]"> */}
                 <div style={{ color: "#356E35" }}>
                   <marquee>
                     Industrial Energy Management System Flow Meter & Ground
@@ -850,9 +681,7 @@ export const Dashboard = () => {
                   </marquee>
                 </div>
               </div>
-              {/* <div className="sm:grid sm:grid-cols-7 font-semibold"> */}
               <div className="plantname">
-                {/* <div className="sm:col-span-2 border border-1 border-gray-200 shadow-md rounded-2xl overflow-hidden p-5 m-1 bg-white"> */}
                 <div className="plant1">
                   <div>Gulati Oil India Pvt Ltd</div>
                   <div>Plant Capacity : 500.31 kWp</div>
@@ -861,17 +690,11 @@ export const Dashboard = () => {
                   <div>Gulati Oil India Pvt Ltd</div>
                   <div>Plant Capacity : 500.31 kWp</div>
                 </div>
-                {/* <img className="sm:col-span-3 sm:h-28" src={fullimage} alt="" /> */}
                 <img className="plantimage" src={fullimage} alt="" />
               </div>
-              {/* <div className="flex justify-end"> */}
               <div className="tabs">
-                Dashboard/Default
-                {/* <div style={{ display: "flex", justifyContent: "flex-end" }}> */}
+                <div className="tabs_first_part">Dashboard/Default</div>
                 <div className="tabs_style">
-                  {/* <button className="bg-white px-2 hover:bg-white">Tab 1</button>
-                <button className="px-2 hover:bg-white">Tab 2</button>
-                <button className="mr-10 px-2 hover:bg-white">Tab 3</button> */}
                   <button
                     style={{
                       paddingLeft: "0.5rem",
@@ -880,7 +703,10 @@ export const Dashboard = () => {
                         ? "rgba(238, 238, 238, 1)"
                         : "rgba(255, 255, 255, 0)",
                       borderWidth: tab1 ? "1px 1px 0px 1px" : "0",
+                      borderColor: "#356E35",
                       borderStyle: "solid",
+                      fontSize: "13px",
+                      color: "#356E35",
                     }}
                     onClick={tab1handler}
                   >
@@ -889,21 +715,33 @@ export const Dashboard = () => {
                   <button
                     className="tab2button"
                     style={{
+                      paddingLeft: "0.5rem",
+                      paddingRight: "0.5rem",
                       backgroundColor: tab2
                         ? "rgba(238, 238, 238, 1)"
                         : "rgba(255, 255, 255, 0)",
                       borderWidth: tab2 ? "1px 1px 0px 1px" : "0",
+                      borderColor: "#356E35",
                       borderStyle: "solid",
+                      fontSize: "13px",
+                      color: "#356E35",
                     }}
                     onClick={tab2handler}
                   >
                     Tab 2
                   </button>
-                  <button className="tab3">Tab 3</button>
+                  <button
+                    className="tab3"
+                    style={{
+                      fontSize: "13px",
+                      color: "#356E35",
+                    }}
+                  >
+                    Tab 3
+                  </button>
                 </div>
               </div>
             </div>
-            {/* <div className="sm:row-span-6 pl-1 sm:pl-3 pr-1 sm:pr-5 grid grid-rows-12"> */}
             <div className="allcharts">
               <div className="statusbox">
                 <img className="calender" src={calender} alt="" />
@@ -913,13 +751,13 @@ export const Dashboard = () => {
                 </div>
                 <img src={cloud} alt="" />
                 <div className="weather">Current Weather</div>
-                <img src={thermometer} alt="" />
+                <img src={thermometer} className="status_thermometer" alt="" />
 
                 <div className="avg">Today's AVG PR : 21 Oct 2023</div>
                 <img src={thermometer} alt="" />
 
                 <div className="avg">Temperature : 25.4C</div>
-                <img src={droplet} alt="" />
+                <img src={droplet} className="status_droplet" alt="" />
                 <div className="humidity">Humidity : 36%</div>
               </div>
 
@@ -999,13 +837,19 @@ export const Dashboard = () => {
 
                 <div className="">
                   <div className="chart3title">
-                    <div>Inverter Wise Capacity [KWp]</div>
+                    <div style={{ marginLeft: "2px" }}>
+                      Inverter Wise Capacity [KWp]
+                    </div>
                     <img
-                      className="ml-28 sm:ml-24 h-4 mt-px"
+                      className="doughnut_reverse_image"
                       src={reverselogo}
                       alt=""
                     />
-                    <img className="h-5" src={settinglogo} alt="" />
+                    <img
+                      className="doughnut_setting_image"
+                      src={settinglogo}
+                      alt=""
+                    />
                   </div>
 
                   <div className="doughnutchart">
@@ -1015,21 +859,25 @@ export const Dashboard = () => {
 
                 <div className="chart4">
                   <div className="chart4title">
-                    <div>Inverter Wise Capacity [KWp]</div>
-                    <img
-                      className=" ml-0.5 sm:ml-10 h-4 mt-1"
+                    <div className="bar_page_1_title">
+                      Inverter Wise Capacity [KWp]
+                    </div>
+                    <image
+                      className="bar_page_1_calender_image"
                       src={calender}
                       alt=""
                     />
-                    <div className="ml-px sm:ml-3 rounded-md p-1 px-3 bg-white shadow-inner">
-                      12/Oct/2023
-                    </div>
-                    <div className="m-0.5 sm:m-1">to</div>
+                    <div className="bar_page_1_first_date">12/Oct/2023</div>
+                    <div className="bar_page_1_to">to</div>
                     <div className="ml-0.5 sm:ml-3 rounded-md p-1 px-3 bg-white shadow-inner">
                       21/Oct/2023
                     </div>
-                    <img className="ml-2 mt-1 h-4" src={reverselogo} alt="" />
-                    <img className="ml-1 sm:ml-40 h-5" src={expand} alt="" />
+                    <img className="ml-1 mt-1 h-4" src={reverselogo} alt="" />
+                    <img
+                      className="ml-1 sm:ml-[105px] h-5"
+                      src={expand}
+                      alt=""
+                    />
                     <img className="h-5" src={settinglogo} alt="" />
                   </div>
 
@@ -1044,21 +892,23 @@ export const Dashboard = () => {
                     <div className="chart3title">
                       <div>Total Instant Power [KW]</div>
                       <img
-                        className="ml-32 sm:ml-28 h-4 mt-px"
+                        className="ml-36 sm:ml-32 h-4 mt-px"
                         src={reverselogo}
                         alt=""
                       />
                       <img className="h-5" src={settinglogo} alt="" />
                     </div>
-                    <div className="h-48 rounded-lg border-2">
+                    <div className="h-48 rounded-lg border-2 bg-white ml-1">
                       <Pie options={options4} data={data4} />
                     </div>
                   </div>
                   <div>
                     <div className="chart4title">
-                      <div>Inverter Wise Capacity [KWp]</div>
+                      <div className="hidden sm:block mt-px">
+                        Inverter Wise Capacity [KWp]
+                      </div>
                       <img
-                        className=" ml-0.5 sm:ml-10 h-4 mt-1"
+                        className=" ml-0.5 sm:ml-[120px] h-4 mt-1"
                         src={calender}
                         alt=""
                       />
@@ -1070,7 +920,11 @@ export const Dashboard = () => {
                         21/Oct/2023
                       </div>
                       <img className="ml-2 mt-1 h-4" src={reverselogo} alt="" />
-                      <img className="ml-1 sm:ml-40 h-5" src={expand} alt="" />
+                      <img
+                        className="ml-1 sm:ml-[120px] h-5"
+                        src={expand}
+                        alt=""
+                      />
                       <img className="h-5" src={settinglogo} alt="" />
                     </div>
                     <div className="barchart">
@@ -1082,7 +936,7 @@ export const Dashboard = () => {
                   <div className="chart3title">
                     <div>Peak KW vs KWp</div>
                     <img
-                      className="ml-36 sm:ml-[830px] h-4 mt-px"
+                      className="ml-40 sm:ml-[880px] h-4 mt-px"
                       src={reverselogo}
                       alt=""
                     />

@@ -16,13 +16,13 @@ export const Login = () => {
       {/* //   background-image: `url(/solar-panel-close-up 1)`,
 
         // }} */}
-      <div className="grid grid-cols-1 lg:grid-cols-8 p-5 m-3 sm:m-5 md:mx-56 md:mt-12 md:mb-10 border-4 rounded-3xl bg-black/[.28]">
+      <div className="grid grid-cols-1 lg:grid-cols-9 p-5 m-3 sm:m-5 md:mx-64 md:mt-12 md:mb-10 border-4 rounded-3xl bg-black/[.28]">
         {/* <div className="upper_part"> */}
-        <div className="border border-1 border-gray-200 lg:col-span-3 shadow-md rounded-2xl overflow-hidden p-3 md:p-2 bg-white">
+        <div className="border border-1 border-gray-200 lg:col-span-4 shadow-md rounded-2xl overflow-hidden p-3 md:p-5 bg-white">
           <div className="flex flex-row">
             <img className="w-18 h-11" src={logo} alt="" />
             <div class="text-end">
-              <div className="text-2xl font-bold">Hey,</div>
+              <div className="text-2xl font-bold sm:ml-44">Hey,</div>
               <div className="text-2xl font-bold">Welcome Back!</div>
               <div className="text-[13px] font-medium text-[#7E8B9E]">
                 We are very happy to see you back!
@@ -70,8 +70,8 @@ export const Login = () => {
             <div className="text-[#3568FF]">www.poweramr.in</div>
           </div>
         </div>
-        <div className="col-span-5 p-2 sm:p-2.5 font-semibold text-xs text-[#003399] ml-7 mt-6">
-          <div className="border border-1 border-gray-200 shadow-md rounded-2xl overflow-hidden px-1 text-center text-[#003399] bg-white">
+        <div className="col-span-5 p-2 sm:p-2.5 font-semibold text-xs text-[#003399] ml-2 sm:ml-7 mt-6">
+          <div className="border border-1 border-[#003399] shadow-md rounded-2xl overflow-hidden px-1 text-center text-[#003399] bg-white sm:mb-10">
             <div className="text-xl font-bold">Most Advanced Platform</div>
             <div className="text-base font-semibold">
               for Solar Plant Management & Control
@@ -79,8 +79,8 @@ export const Login = () => {
           </div>
           <div className="circle">
             {/* <div classname="text1">engagement</div> */}
-            <div className="grid sm:grid-cols-2 mt-10 sm:mt-4 text-[10px] font-bold">
-              <div className="border border-1 border-gray-200 shadow-md rounded-2xl overflow-hidden p-1 bg-white leading-3">
+            <div className="grid sm:grid-cols-2 mt-10 sm:mt-4 text-xs sm:text-[9px] font-semibold sm:font-bold">
+              <div className="border border-1 border-[#003399] shadow-md rounded-2xl overflow-hidden p-3 sm:p-1 bg-white leading-3">
                 <ul className="list-disc">
                   <li>Cloud & Local Dashboard Solution</li>
                   <li>Comprehensive MobileApp</li>
@@ -92,7 +92,7 @@ export const Login = () => {
                   <li>Global Integration with third part platform & API</li>
                 </ul>
               </div>
-              <div className="border border-1 border-gray-200 shadow-md rounded-2xl overflow-hidden p-1 bg-white mt-3 sm:mt-0 sm:ml-10  leading-3">
+              <div className="border border-1 border-gray-200 shadow-md rounded-2xl overflow-hidden p-3 sm:p-1 bg-white mt-3 sm:mt-0 sm:ml-10  leading-3">
                 <ul className="list-disc">
                   <li>Solar PV Monitoring</li>
                   <li>DG PV Controller</li>
@@ -107,7 +107,7 @@ export const Login = () => {
               </div>
               {/* </div> */}
               {/* <div className="columns-2"> */}
-              <div className="border border-1 border-gray-200 shadow-md rounded-2xl overflow-hidden p-1  mt-3 sm:mt-32 bg-white leading-3">
+              <div className="border border-1 border-gray-200 shadow-md rounded-2xl overflow-hidden p-3 sm:p-1  mt-3 sm:mt-32 bg-white leading-3">
                 <ul className="list-disc">
                   <li>
                     Centralized Platform helps eliminate dependency of OEM
@@ -122,7 +122,7 @@ export const Login = () => {
                   <li>Data driven O&M</li>
                 </ul>
               </div>
-              <div className="border border-1 border-gray-200 shadow-md rounded-2xl overflow-hidden p-1 sm:ml-10 mt-3 sm:mt-32 bg-white leading-3">
+              <div className="border border-1 border-gray-200 shadow-md rounded-2xl overflow-hidden p-3 sm:p-1 sm:ml-10 mt-3 sm:mt-32 bg-white leading-3">
                 <ul className="list-disc">
                   <li>Support Rooftop & ground mounted projects</li>
                   <li>
@@ -137,7 +137,7 @@ export const Login = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-row border border-1 border-gray-200 shadow-md rounded-2xl overflow-hidden text-sm font-semibold px-1 py-2 mx:4 sm:mx-24 bg-white font-['Inter']">
+      <div className="flex flex-row border border-1 border-gray-200 shadow-md rounded-2xl text-base overflow-hidden font-semibold px-1 py-1 mx:4 sm:mx-24 bg-white font-['Inter']">
         <div className="mr-2 text-[#FF0000]">ms</div>
         <div className="text-[#003399]">
           <marquee behavior="" direction="">
@@ -148,12 +148,13 @@ export const Login = () => {
         </div>
       </div>
       <div className="flex flex-row shadow-md overflow-hidden text-sm font-semibold my-10 bg-white">
-        <div className="bg-blue-700 p-1 font-semibold text-white">
-          <div className="text-base">Power AMR in NEWS</div>
+        <div className="bg-blue-700 p-1 font-semibold text-white sm:w-28 w-[500px]">
+          <div className="text-sm sm:text-base">Power AMR in NEWS</div>
+          {/* <div className="text-sm sm:text-base">NEWS</div> */}
           {/* <div className="text-2xl"></div> */}
         </div>
 
-        <div className="text-center mt-4 ml-2 text-[#003399]">
+        <div className="text-center mt-3 ml-1 text-[#003399] font-semibold font-['Inter'] text-base">
           <marquee behavior="" direction="">
             are all in one Controller | Logics PowerAMR reaches to 10+ countries
             across the globe | Logics PowerAMR introduces LoRa based
