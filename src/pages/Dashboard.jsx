@@ -1010,7 +1010,7 @@ export const Dashboard = () => {
                     <button>PDF</button>
                   </div>
                 </div>
-                <div className="tab3_second_part">
+                {/* <div className="tab3_second_part">
                   <div className="sortby">Sort by:</div>
                   <button
                     style={{
@@ -1057,13 +1057,67 @@ export const Dashboard = () => {
                   >
                     Year Reports
                   </button>
-                  {/* <div className="dayreport">Day Reports</div>
-                  <div className="monthreport">Month Reports</div>
-                  <div className="yearreport">Year Reports</div> */}
                   <div className="tab3_first_date">21/Oct/2023</div>
                   <div className="tab3_second_date">27/Oct/2023</div>
                   <div className="search">
                     <button>Search</button>
+                  </div>
+                </div> */}
+                <div className="tab3_second_part">
+                  <div className="tab3_date">
+                    <div className="tab3_first_date">21/Oct/2023</div>
+                    <div className="tab3_second_date">27/Oct/2023</div>
+                    <div className="search">
+                      <button>Search</button>
+                    </div>
+                  </div>
+                  <div className="tab3_reports">
+                    <div className="sortby">Sort by:</div>
+                    <button
+                      style={{
+                        borderColor: "#a5a5a5",
+                        backgroundColor: dayReport ? "#fdf8e4" : "white",
+                        padding: "5px 10px",
+                        borderRadius: "2px 2px 0px 0px",
+                        borderWidth: dayReport ? "2px 1px 0px 1px" : "0px",
+                        fontSize: "12px",
+                        fontWeight: "500",
+                        marginTop: "10px",
+                      }}
+                      onClick={dayreporthandler}
+                    >
+                      Day Reports
+                    </button>
+                    <button
+                      style={{
+                        borderColor: "#a5a5a5",
+                        backgroundColor: monthReport ? "#fdf8e4" : "white",
+                        padding: "5px 10px",
+                        borderRadius: "2px 2px 0px 0px",
+                        borderWidth: monthReport ? "2px 1px 0px 1px" : "0px",
+                        fontSize: "12px",
+                        fontWeight: "500",
+                        marginTop: "10px",
+                      }}
+                      onClick={monthreporthandler}
+                    >
+                      Month Reports
+                    </button>
+                    <button
+                      style={{
+                        borderColor: "#a5a5a5",
+                        backgroundColor: yearReport ? "#fdf8e4" : "white",
+                        padding: "5px 10px",
+                        borderRadius: "2px 2px 0px 0px",
+                        borderWidth: yearReport ? "2px 1px 0px 1px" : "0px",
+                        fontSize: "12px",
+                        fontWeight: "500",
+                        marginTop: "10px",
+                      }}
+                      onClick={yearreporthandler}
+                    >
+                      Year Reports
+                    </button>
                   </div>
                 </div>
                 <div className="tab3_third_part">
@@ -1203,6 +1257,7 @@ export const Dashboard = () => {
                       </tr>
                       {/* <tr>hgjhgjhj</tr> */}
                     </table>
+                    {/* </div> */}
                   </div>
                   <div className="page_bar">
                     <div className="page_bar_first">

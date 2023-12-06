@@ -823,7 +823,7 @@
   border-radius: 10px;
   background-color: #003399;
   color: white;
-  margin: 10px 5px 10px 825px;
+  margin: 10px 5px 10px 100px;
   padding: 5px 10px;
   font-size: 12px;
   font-weight: 600;
@@ -846,10 +846,20 @@
 }
 
 .tab3_second_part {
-  display: flex;
-  flex-flow: row;
+  /* display: flex;
+  flex-flow: row-reverse; */
   background-color: white;
   margin: 1px 5px 1px 5px;
+}
+
+.tab3_date {
+  display: flex;
+  flex-flow: row;
+}
+
+.tab3_reports {
+  display: flex;
+  flex-flow: row;
 }
 
 .sortby {
@@ -858,32 +868,32 @@
   line-height: 15px;
   letter-spacing: 0em;
   text-align: left;
-  margin: 20px 10px 10px 10px;
+  margin: 17px 12px 5px 5px;
 }
 
 .dayreport {
   border-color: #a5a5a5;
   background-color: #fdf8e4;
-  padding: 5px 10px;
+  padding: 2px 5px;
   border-radius: 2px 2px 0px 0px;
   border-width: 2px 1px 0px 1px;
   font-size: 12px;
   font-weight: 500;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .monthreport {
-  padding: 5px 10px;
+  padding: 2px 5px;
   font-size: 12px;
   font-weight: 500;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .yearreport {
-  padding: 5px 10px;
+  padding: 2px 5px;
   font-size: 12px;
   font-weight: 500;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .tab3_first_date {
@@ -892,7 +902,7 @@
   padding: 5px 10px;
   font-size: 12px;
   font-weight: 600;
-  margin: 5px 5px 5px 430px;
+  margin: 5px 5px 5px 30px;
 }
 
 .tab3_second_date {
@@ -923,10 +933,8 @@
 }
 
 .tab3_table {
-}
-
-table {
-  width: 100%;
+  overflow-x: auto;
+  width: 330px;
 }
 
 th,
@@ -974,7 +982,7 @@ tr:nth-child(odd) {
 }
 
 .page_bar_first {
-  margin: 1px 3px 1px 830px;
+  margin: 1px 3px 1px 110px;
 }
 
 .page_bar_prev {
@@ -999,4 +1007,82 @@ tr:nth-child(odd) {
 
 .page_bar_last {
   margin: 1px 3px 1px 5px;
+}
+
+@media (min-width: 640px) {
+  table {
+    width: 100%;
+  }
+
+  .tab3_table {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .excel_btn {
+    border-radius: 10px;
+    background-color: #003399;
+    color: white;
+    margin: 10px 5px 10px 825px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  .tab3_second_part {
+    display: flex;
+    flex-flow: row-reverse;
+    background-color: white;
+    margin: 1px 5px 1px 5px;
+  }
+
+  .sortby {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 20px 10px 10px 10px;
+  }
+
+  .dayreport {
+    border-color: #a5a5a5;
+    background-color: #fdf8e4;
+    padding: 5px 10px;
+    border-radius: 2px 2px 0px 0px;
+    border-width: 2px 1px 0px 1px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 10px;
+  }
+
+  .monthreport {
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 10px;
+  }
+
+  .yearreport {
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 10px;
+  }
+
+  .tab3_first_date {
+    border-width: 2px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 5px 5px 5px 435px;
+  }
+
+  .page_bar_first {
+    margin: 1px 3px 1px 830px;
+  }
 }
