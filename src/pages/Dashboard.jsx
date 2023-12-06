@@ -316,6 +316,10 @@ export const Dashboard = () => {
   const [dashboardOpen, setDashboardOpen] = useState(false);
   const [tab1, setTab1] = useState(true);
   const [tab2, setTab2] = useState(false);
+  const [tab3, setTab3] = useState(false);
+  const [dayReport, setDayReport] = useState(true);
+  const [monthReport, setMonthReport] = useState(false);
+  const [yearReport, setYearReport] = useState(false);
 
   const dropDownHandler = () => {
     setDropDown((status) => !status);
@@ -332,11 +336,37 @@ export const Dashboard = () => {
   const tab1handler = () => {
     setTab1((status) => true);
     setTab2((status) => false);
+    setTab3((status) => false);
   };
 
   const tab2handler = () => {
     setTab2((status) => true);
     setTab1((status) => false);
+    setTab3((status) => false);
+  };
+
+  const tab3handler = () => {
+    setTab2((status) => false);
+    setTab1((status) => false);
+    setTab3((status) => true);
+  };
+
+  const dayreporthandler = () => {
+    setDayReport(true);
+    setMonthReport(false);
+    setYearReport(false);
+  };
+
+  const monthreporthandler = () => {
+    setDayReport(false);
+    setMonthReport(true);
+    setYearReport(false);
+  };
+
+  const yearreporthandler = () => {
+    setDayReport(false);
+    setMonthReport(false);
+    setYearReport(true);
   };
 
   return (
@@ -731,11 +761,20 @@ export const Dashboard = () => {
                     Tab 2
                   </button>
                   <button
-                    className="tab3"
+                    className="tab3button"
                     style={{
+                      paddingLeft: "0.5rem",
+                      paddingRight: "0.5rem",
+                      backgroundColor: tab3
+                        ? "rgba(238, 238, 238, 1)"
+                        : "rgba(255, 255, 255, 0)",
+                      borderWidth: tab3 ? "1px 1px 0px 1px" : "0",
+                      borderColor: "#356E35",
+                      borderStyle: "solid",
                       fontSize: "13px",
                       color: "#356E35",
                     }}
+                    onClick={tab3handler}
                   >
                     Tab 3
                   </button>
@@ -869,16 +908,23 @@ export const Dashboard = () => {
                     />
                     <div className="bar_page_1_first_date">12/Oct/2023</div>
                     <div className="bar_page_1_to">to</div>
-                    <div className="ml-0.5 sm:ml-3 rounded-md p-1 px-3 bg-white shadow-inner">
-                      21/Oct/2023
-                    </div>
-                    <img className="ml-1 mt-1 h-4" src={reverselogo} alt="" />
+                    <div className="bar_page_1_second_date">21/Oct/2023</div>
                     <img
-                      className="ml-1 sm:ml-[105px] h-5"
+                      className="bar_page_1_reverse_image"
+                      src={reverselogo}
+                      alt=""
+                    />
+                    <img
+                      // className="ml-1 sm:ml-[105px] h-5"
+                      className="bar_page_1_expand_image"
                       src={expand}
                       alt=""
                     />
-                    <img className="h-5" src={settinglogo} alt="" />
+                    <img
+                      className="bar_page_1_setting_image"
+                      src={settinglogo}
+                      alt=""
+                    />
                   </div>
 
                   <div className="barchart">
@@ -892,13 +938,19 @@ export const Dashboard = () => {
                     <div className="chart3title">
                       <div>Total Instant Power [KW]</div>
                       <img
-                        className="ml-36 sm:ml-32 h-4 mt-px"
+                        // className="ml-36 sm:ml-32 h-4 mt-px"
+                        className="pie_reverse_image"
                         src={reverselogo}
                         alt=""
                       />
-                      <img className="h-5" src={settinglogo} alt="" />
+                      <img
+                        className="pie_setting_image"
+                        src={settinglogo}
+                        alt=""
+                      />
                     </div>
                     <div className="h-48 rounded-lg border-2 bg-white ml-1">
+                      {/* <div className="piechart"> */}
                       <Pie options={options4} data={data4} />
                     </div>
                   </div>
@@ -945,6 +997,241 @@ export const Dashboard = () => {
                   </div>
                   <div className="barchart">
                     <Bar options={options5} data={data5} />
+                  </div>
+                </div>
+              </div>
+              <div className={`tab3 ${tab3 ? "active" : ""}`}>
+                <div className="tab3_first_part">
+                  <div className="plant_performance">Plant Performance</div>
+                  <div className="excel_btn">
+                    <button>Excel</button>
+                  </div>
+                  <div className="pdf_btn">
+                    <button>PDF</button>
+                  </div>
+                </div>
+                <div className="tab3_second_part">
+                  <div className="sortby">Sort by:</div>
+                  <button
+                    style={{
+                      borderColor: "#a5a5a5",
+                      backgroundColor: dayReport ? "#fdf8e4" : "white",
+                      padding: "5px 10px",
+                      borderRadius: "2px 2px 0px 0px",
+                      borderWidth: dayReport ? "2px 1px 0px 1px" : "0px",
+                      fontSize: "12px",
+                      fontWeight: "500",
+                      marginTop: "10px",
+                    }}
+                    onClick={dayreporthandler}
+                  >
+                    Day Reports
+                  </button>
+                  <button
+                    style={{
+                      borderColor: "#a5a5a5",
+                      backgroundColor: monthReport ? "#fdf8e4" : "white",
+                      padding: "5px 10px",
+                      borderRadius: "2px 2px 0px 0px",
+                      borderWidth: monthReport ? "2px 1px 0px 1px" : "0px",
+                      fontSize: "12px",
+                      fontWeight: "500",
+                      marginTop: "10px",
+                    }}
+                    onClick={monthreporthandler}
+                  >
+                    Month Reports
+                  </button>
+                  <button
+                    style={{
+                      borderColor: "#a5a5a5",
+                      backgroundColor: yearReport ? "#fdf8e4" : "white",
+                      padding: "5px 10px",
+                      borderRadius: "2px 2px 0px 0px",
+                      borderWidth: yearReport ? "2px 1px 0px 1px" : "0px",
+                      fontSize: "12px",
+                      fontWeight: "500",
+                      marginTop: "10px",
+                    }}
+                    onClick={yearreporthandler}
+                  >
+                    Year Reports
+                  </button>
+                  {/* <div className="dayreport">Day Reports</div>
+                  <div className="monthreport">Month Reports</div>
+                  <div className="yearreport">Year Reports</div> */}
+                  <div className="tab3_first_date">21/Oct/2023</div>
+                  <div className="tab3_second_date">27/Oct/2023</div>
+                  <div className="search">
+                    <button>Search</button>
+                  </div>
+                </div>
+                <div className="tab3_third_part">
+                  <div className="tab3_table">
+                    <table>
+                      <tr>
+                        <th>Date</th>
+                        <th>Total Inverters</th>
+                        <th>Total Gen [KWh]</th>
+                        <th>Plant CUF</th>
+                        <th>Plant PR</th>
+                        <th>Specific Yield</th>
+                        <th>Solar Insulation</th>
+                        <th>Expected Generation</th>
+                        <th>Peak Radiation</th>
+                        <th>Peak Radiation Time</th>
+                      </tr>
+                      <tr>
+                        <td>21/09/2023</td>
+                        <td>1</td>
+                        <td>465.70</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                      </tr>
+                      <tr>
+                        <td>21/09/2023</td>
+                        <td>1</td>
+                        <td>465.70</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                      </tr>
+                      <tr>
+                        <td>21/09/2023</td>
+                        <td>1</td>
+                        <td>465.70</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                      </tr>
+                      <tr>
+                        <td>21/09/2023</td>
+                        <td>1</td>
+                        <td>465.70</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                      </tr>
+                      <tr>
+                        <td>21/09/2023</td>
+                        <td>1</td>
+                        <td>465.70</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                      </tr>
+                      <tr>
+                        <td>21/09/2023</td>
+                        <td>1</td>
+                        <td>465.70</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                      </tr>
+                      <tr>
+                        <td>21/09/2023</td>
+                        <td>1</td>
+                        <td>465.70</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                      </tr>
+                      <tr>
+                        <td>21/09/2023</td>
+                        <td>1</td>
+                        <td>465.70</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                      </tr>
+                      <tr>
+                        <td>21/09/2023</td>
+                        <td>1</td>
+                        <td>465.70</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                      </tr>
+                      <tr>
+                        <td>21/09/2023</td>
+                        <td>1</td>
+                        <td>465.70</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                        <td>39.593</td>
+                      </tr>
+                      {/* <tr>hgjhgjhj</tr> */}
+                    </table>
+                  </div>
+                  <div className="page_bar">
+                    <div className="page_bar_first">
+                      <button>First</button>
+                    </div>
+                    <div className="page_bar_prev">
+                      <button>Prev</button>
+                    </div>
+                    <div className="page_bar_1">
+                      <button>1</button>
+                    </div>
+                    <div className="page_bar_other">
+                      <button>2</button>
+                    </div>
+                    <div className="page_bar_other">
+                      <button>3</button>
+                    </div>
+                    <div className="page_bar_other">
+                      <button>4</button>
+                    </div>
+                    <div className="page_bar_other">
+                      <button>5</button>
+                    </div>
+                    <div className="page_bar_next">
+                      <button>Next</button>
+                    </div>
+                    <div className="page_bar_last">
+                      <button>Last</button>
+                    </div>
                   </div>
                 </div>
               </div>
