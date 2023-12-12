@@ -938,7 +938,6 @@ export const Dashboard = () => {
                     <div className="chart3title">
                       <div>Total Instant Power [KW]</div>
                       <img
-                        // className="ml-36 sm:ml-32 h-4 mt-px"
                         className="pie_reverse_image"
                         src={reverselogo}
                         alt=""
@@ -949,35 +948,38 @@ export const Dashboard = () => {
                         alt=""
                       />
                     </div>
-                    <div className="h-48 rounded-lg border-2 bg-white ml-1">
-                      {/* <div className="piechart"> */}
+                    <div className="piechart">
                       <Pie options={options4} data={data4} />
                     </div>
                   </div>
                   <div>
                     <div className="chart4title">
-                      <div className="hidden sm:block mt-px">
+                      <div className="bar_2_tab_2_inverter">
                         Inverter Wise Capacity [KWp]
                       </div>
                       <img
-                        className=" ml-0.5 sm:ml-[120px] h-4 mt-1"
+                        className="bar_2_tab_2_calender"
                         src={calender}
                         alt=""
                       />
-                      <div className="ml-px sm:ml-3 sm:rounded-md p-1 bg-white shadow-inner">
-                        12/Oct/2023
-                      </div>
-                      <div className="m-0.5 sm:m-1">to</div>
-                      <div className="ml-0.5 sm:ml-3 rounded-md p-1 px-3 bg-white shadow-inner">
-                        21/Oct/2023
-                      </div>
-                      <img className="ml-2 mt-1 h-4" src={reverselogo} alt="" />
+                      <div className="bar_2_tab_2_first_date">12/Oct/2023</div>
+                      <div className="bar_2_tab_2_to">to</div>
+                      <div className="bar_2_tab_2_second_date">21/Oct/2023</div>
                       <img
-                        className="ml-1 sm:ml-[120px] h-5"
+                        className="bar_2_tab_2_reverse_img"
+                        src={reverselogo}
+                        alt=""
+                      />
+                      <img
+                        className="bar_2_tab_2_expand_img"
                         src={expand}
                         alt=""
                       />
-                      <img className="h-5" src={settinglogo} alt="" />
+                      <img
+                        className="bar_2_tab_2_setting_img"
+                        src={settinglogo}
+                        alt=""
+                      />
                     </div>
                     <div className="barchart">
                       <Bar options={options3} data={data3} />
@@ -988,12 +990,22 @@ export const Dashboard = () => {
                   <div className="chart3title">
                     <div>Peak KW vs KWp</div>
                     <img
-                      className="ml-40 sm:ml-[880px] h-4 mt-px"
+                      // className="ml-36 sm:ml-[880px] h-4 mt-px"
+                      className="bar_3_tab_2_reverse_img"
                       src={reverselogo}
                       alt=""
                     />
-                    <img className="ml-1 sm:ml-2 h-5" src={expand} alt="" />
-                    <img className="h-5" src={settinglogo} alt="" />
+                    {/* <img className="ml-1 sm:ml-2 h-5" src={expand} alt="" /> */}
+                    <img
+                      className="bar_3_tab_2_expand_img"
+                      src={expand}
+                      alt=""
+                    />
+                    <img
+                      className="bar_3_tab_2_setting_img"
+                      src={settinglogo}
+                      alt=""
+                    />
                   </div>
                   <div className="barchart">
                     <Bar options={options5} data={data5} />
@@ -1010,59 +1022,6 @@ export const Dashboard = () => {
                     <button>PDF</button>
                   </div>
                 </div>
-                {/* <div className="tab3_second_part">
-                  <div className="sortby">Sort by:</div>
-                  <button
-                    style={{
-                      borderColor: "#a5a5a5",
-                      backgroundColor: dayReport ? "#fdf8e4" : "white",
-                      padding: "5px 10px",
-                      borderRadius: "2px 2px 0px 0px",
-                      borderWidth: dayReport ? "2px 1px 0px 1px" : "0px",
-                      fontSize: "12px",
-                      fontWeight: "500",
-                      marginTop: "10px",
-                    }}
-                    onClick={dayreporthandler}
-                  >
-                    Day Reports
-                  </button>
-                  <button
-                    style={{
-                      borderColor: "#a5a5a5",
-                      backgroundColor: monthReport ? "#fdf8e4" : "white",
-                      padding: "5px 10px",
-                      borderRadius: "2px 2px 0px 0px",
-                      borderWidth: monthReport ? "2px 1px 0px 1px" : "0px",
-                      fontSize: "12px",
-                      fontWeight: "500",
-                      marginTop: "10px",
-                    }}
-                    onClick={monthreporthandler}
-                  >
-                    Month Reports
-                  </button>
-                  <button
-                    style={{
-                      borderColor: "#a5a5a5",
-                      backgroundColor: yearReport ? "#fdf8e4" : "white",
-                      padding: "5px 10px",
-                      borderRadius: "2px 2px 0px 0px",
-                      borderWidth: yearReport ? "2px 1px 0px 1px" : "0px",
-                      fontSize: "12px",
-                      fontWeight: "500",
-                      marginTop: "10px",
-                    }}
-                    onClick={yearreporthandler}
-                  >
-                    Year Reports
-                  </button>
-                  <div className="tab3_first_date">21/Oct/2023</div>
-                  <div className="tab3_second_date">27/Oct/2023</div>
-                  <div className="search">
-                    <button>Search</button>
-                  </div>
-                </div> */}
                 <div className="tab3_second_part">
                   <div className="tab3_date">
                     <div className="tab3_first_date">21/Oct/2023</div>
@@ -1255,9 +1214,7 @@ export const Dashboard = () => {
                         <td>39.593</td>
                         <td>39.593</td>
                       </tr>
-                      {/* <tr>hgjhgjhj</tr> */}
                     </table>
-                    {/* </div> */}
                   </div>
                   <div className="page_bar">
                     <div className="page_bar_first">
